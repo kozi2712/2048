@@ -1,20 +1,7 @@
 pipeline {
     agent any
 
-    stages {
-        
-        stage('Clone Repo') {
-            steps {
-                script{
-                    checkout([$class: 'GitSCM', 
-                    branches: [[name: '*/master']], 
-                    userRemoteConfigs: [[url: 'https://github.com/kozi2712/2048']]])
-            		
-                }
-
-            }
-        }
-	   
+    stages { 
 	stage('Build') {
 		steps {
 		       nodejs('Node20'){
