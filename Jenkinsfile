@@ -19,6 +19,7 @@ pipeline {
                script{
                     echo 'Clean cache'
                     sh 'yarn cache clean'
+		    sh "npm install -g yarn"
                     sh 'yarn install'
                 }
 
