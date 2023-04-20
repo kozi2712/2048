@@ -14,20 +14,20 @@ pipeline {
 
             }
         }
-	    withEnv(['PATH+NODE=/something=/path/to/node/bin']){
-		stage('Build') {
-		    steps {
-		       script{
+	   
+	stage('Build') {
+		steps {
+		       nodejs('Node-20'){
 			    sh "npm install -g yarn"
 			    sh 'yarn install'
 			}
 
-		    }
 		}
-	    }
+	}
+	    
         stage('Test') {
             steps {
-                script{
+                nodejs('Node-20'){
                 sh 'yarn test'
                 }
 
