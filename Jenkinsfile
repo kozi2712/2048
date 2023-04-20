@@ -5,7 +5,6 @@ pipeline {
 	stage('Build') {
 		steps {
 		       nodejs('Node20'){
-			    sh 'npm install -g windows-build-tools'
 			    sh 'yarn cache clean'
 			    sh 'yarn install'
 			}
