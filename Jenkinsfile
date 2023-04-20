@@ -14,15 +14,17 @@ pipeline {
 
             }
         }
-        stage('Build') {
-            steps {
-               script{
-		    sh "npm install -g yarn"
-                    sh 'yarn install'
-                }
+	    withEnv(['PATH+NODE=/something=/path/to/node/bin']){
+		stage('Build') {
+		    steps {
+		       script{
+			    sh "npm install -g yarn"
+			    sh 'yarn install'
+			}
 
-            }
-        }
+		    }
+		}
+	    }
         stage('Test') {
             steps {
                 script{
