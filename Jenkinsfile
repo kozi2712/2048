@@ -7,8 +7,8 @@ pipeline {
             steps {
                 script{
                     checkout([$class: 'GitSCM', 
-                    branches: [[name: '*/main']], 
-                    userRemoteConfigs: [[url: 'https://github.com/kozi2712/DevOps']]])
+                    branches: [[name: '*/master']], 
+                    userRemoteConfigs: [[url: 'https://github.com/kozi2712/2048']]])
             		
                 }
 
