@@ -17,7 +17,11 @@ pipeline {
         stage('Build') {
             steps {
                 script{
-			        echo 'Stage build'
+			nodejs('Node-18.14'){
+                    		echo 'Clean cache'
+                   		sh 'yarn cache clean'
+                   		sh 'yarn install'
+               		}
                 }
 
             }
@@ -25,7 +29,9 @@ pipeline {
         stage('Test') {
             steps {
                 script{
-			        echo 'Stage Test'
+			nodejs('Node-18.14'){
+                		sh 'yarn test'
+                		}
                 }
 
             }
