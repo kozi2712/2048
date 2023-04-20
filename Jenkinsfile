@@ -17,7 +17,7 @@ pipeline {
 	   
 	stage('Build') {
 		steps {
-		       nodejs('Node-20'){
+		       nodejs('Node20'){
 			    sh 'yarn cache clean'
 			    sh 'yarn install'
 			}
@@ -27,7 +27,7 @@ pipeline {
 	    
         stage('Test') {
             steps {
-                nodejs('Node-20'){
+                nodejs('Node20'){
                 sh 'yarn test'
                 }
 
