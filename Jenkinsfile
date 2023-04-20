@@ -18,7 +18,6 @@ pipeline {
 	stage('Build') {
 		steps {
 		       nodejs('Node-20'){
-			    sh "npm install -g yarn"
 			    sh 'yarn install'
 			}
 
