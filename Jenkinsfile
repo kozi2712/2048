@@ -5,7 +5,6 @@ pipeline {
 	stage('Build') {
 		steps {
 		       nodejs('Node20'){
-			    sh 'apt-get -y install python python2.7 python-pip python-dev build-essential'
 			    sh 'yarn cache clean'
 			    sh 'yarn install'
 			}
