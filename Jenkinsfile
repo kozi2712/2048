@@ -19,8 +19,6 @@ pipeline {
 		steps {
 		       nodejs('Node-20'){
 			    sh 'yarn cache clean'
-			    sh 'npm install -g node-gyp'
-			    sh 'npm install -g npm'
 			    sh 'yarn install'
 			}
 
